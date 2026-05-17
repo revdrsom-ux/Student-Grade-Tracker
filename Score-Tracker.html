@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Grade Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="Score-tracker.css" />
+  </head>
+
+  <body class="bg-gray-50 min-h-screen py-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <h1 class="text-4xl font-bold text-center text-indigo-700 mb-8">
+        Student Grade Tracker
+      </h1>
+
+      <!-- Form -->
+
+      <div class="bg-white shadow-md rounded-lg p-6 mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Student Name</label
+            >
+            <input
+              type="text"
+              id="nameInput"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              placeholder="Enter student name"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Grade (%)</label
+            >
+            <input
+              type="number"
+              id="gradeInput"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              placeholder="0 - 100"
+              min="0"
+              max="100"
+              step="0.1"
+            />
+          </div>
+          <div class="flex items-end">
+            <button
+              id="addBtn"
+              class="w-full bg-indigo-800 hover:bg-green-700 text-yellow-200 font-semibold py-3 px-6 rounded-lg transition duration-200"
+            >
+              Add Student
+            </button>
+          </div>
+        </div>
+        <div
+          id="errorMsg"
+          class="hidden mt-4 text-red-600 text-center font-medium;"
+        ></div>
+      </div>
+
+      <!-- Average Grade -->
+
+      <div class="bg-white p-6 rounded-2xl shadow-md mb-8 text-center">
+        <p class="text-gray-600">Current Average Grade</p>
+        <p id="averageDisplay" class="text-5xl font-bold text-indigo-600 mt-1">
+          0.0
+        </p>
+      </div>
+
+      <!-- Students Table -->
+
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+        <div class="px-6 py-4 bg-gray-100 border-b border-gray-200">
+          <h2 class="text-xl font-semibold text-gray-800">
+            All Students (<span id="studentCount">0</span>)
+          </h2>
+        </div>
+
+        <table class="w-full">
+          <thead>
+            <tr class="bg-gray-50">
+              <th class="px-6 py-4 text-left">ID</th>
+              <th class="px-6 py-4 text-left">Student Name</th>
+              <th class="px-6 py-4 text-left">Grade (%)</th>
+              <th class="px-6 py-4 text-center w-24">Action</th>
+            </tr>
+          </thead>
+          <tbody id="studentTable" class="divide-y"></tbody>
+        </table>
+      </div>
+
+      <p id="emptyState" class="text-center text-gray-500 py-12 hidden">
+        No students added yet. Use the form above to add students!
+      </p>
+    </div>
+
+    <script src="Score-tracker.js"></script>
+  </body>
+</html>

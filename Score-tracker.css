@@ -1,0 +1,30 @@
+/* styles.css */
+
+/* Highlight for students above average */
+.hightlight {
+  background-color: #21e68a; /* Light teal background */
+  font-weight: 600;
+}
+
+/* Highlight for students below average */
+tr:hover {
+  background-color: #f1f5f9 !important; /* Slightly darker slate hover*/
+}
+
+/* Making sure that highlight stays visible even on hover */
+.hightlight {
+  background-color: #d1fae5 !important;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  background-color: #f8fafc;
+  font-weight: 600;
+  color: #374151;
+}
